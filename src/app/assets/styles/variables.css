@@ -1,0 +1,33 @@
+/* Colors variables */
+
+:root {
+    --white: #FFFFFF;
+    --main: #394573;
+    --violet: #726DA8;
+    --gray: #333333;
+    --aqua: #BEE7E8;
+    --dark-aqua: #A0D2DB;
+    --gradient-light: linear-gradient(90deg, #A0D2DB 0%, #726DA8 100%);
+}
+
+/* Fonts variables */
+
+:root {
+    --h1: clamp(24px, 3vw, 50px)/1.2 "Montserrat-SemiBold", sans-serif;
+    --h2: clamp(20px, 3vw, 32px)/1.2 "Montserrat-SemiBold", sans-serif;
+    --h3: clamp(14px, 3vw, 30px)/1.2 "Montserrat-Medium", sans-serif;
+    --p1: clamp(16px, 3vw, 24px)/1.2 "Montserrat-SemiBold", sans-serif;
+    --p2: 24px/1.2 "Montserrat-Medium", sans-serif;
+    --p3: 24px/1.2 "Montserrat-Regular", sans-serif;
+    --p4: clamp(14px, 3vw, 22px)/1.2 "Montserrat-Regular", sans-serif;
+    --input: clamp(14px, 3vw, 18px)/1.2 "Montserrat-Regular", sans-serif;
+    --button: clamp(20px, 3vw, 22px)/1.2 "Montserrat-Medium", sans-serif;
+}
+
+@media (max-width: 767px) {
+    :root {
+        --h3: 14px/1.2 "Montserrat-Regular", sans-serif;
+    }
+}
+
+/* Global variables */
