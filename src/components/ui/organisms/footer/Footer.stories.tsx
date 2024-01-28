@@ -7,7 +7,30 @@ const meta: Meta = {
   title: "Organisms/Footer",
   component: Footer,
   tags: ["autodocs"],
-  argTypes: {},
+  argTypes: {
+    contactsList: {
+      description:
+        "Свойство socialList принимает список элементов иконок соц. сетей",
+      control: {
+        disable: true,
+      },
+    },
+
+    text: {
+      description: "Свойство text отображает текст в центре футера",
+      table: {
+        defaultValue: { summary: "Любой текст" },
+      },
+      control: "text",
+    },
+
+    iconLogo: {
+      description: "Свойство iconLogo принимает иконку логотипа",
+      control: {
+        disable: true,
+      },
+    },
+  },
 };
 
 export default meta;

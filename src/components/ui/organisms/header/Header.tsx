@@ -4,6 +4,7 @@ import { LinkType } from "../../molecules/links-list/Links-list.tsx";
 import { ButtonBurger } from "../../atoms/button-burger/Button-burger.tsx";
 
 type HeaderType = {
+  className?: string;
   iconLogo?: ReactNode;
   isBurgerMenuOpen: boolean;
   toggleBurgerMenu: () => void;
@@ -13,6 +14,7 @@ type HeaderType = {
 };
 
 export const Header: React.FC<HeaderType> = ({
+  className,
   iconLogo,
   isBurgerMenuOpen,
   toggleBurgerMenu,
@@ -32,10 +34,12 @@ export const Header: React.FC<HeaderType> = ({
       <s.Logo to="/" iconLink={iconLogo} />
 
       <s.NavWrapper isBurgerMenuOpen={isBurgerMenuOpen}>
-        <s.NavList links={navList} />
+        <s.NavList className={className} links={navList} />
       </s.NavWrapper>
 
-      {!isTablet && <s.SocialListIcons links={socialList} />}
+      {!isTablet && (
+        <s.SocialListIcons className={className} links={socialList} />
+      )}
     </s.HeaderWrapper>
   );
 };

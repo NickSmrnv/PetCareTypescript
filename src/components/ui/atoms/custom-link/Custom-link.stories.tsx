@@ -12,6 +12,14 @@ const meta = {
   },
   tags: ["autodocs"],
   argTypes: {
+    className: {
+      description: "Свойство className добавляет класс компоненте",
+      table: {
+        defaultValue: { summary: "Любой текст" },
+      },
+      control: "text",
+    },
+
     label: {
       description: "Свойство label отображает текст внутри ссылки",
       table: {
@@ -34,13 +42,21 @@ const meta = {
         defaultValue: { summary: "Любая функция" },
       },
     },
+
+    iconLink: {
+      description: "Свойство iconLink позволяет принимать React компоненты",
+      table: {
+        defaultValue: { summary: "React Node" },
+      },
+      control: "Node",
+    },
   },
 } satisfies Meta<typeof CustomLink>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const CommonCustomLink: Story = (args: JSX.IntrinsicAttributes) => {
+export const DefaultCustomLink: Story = (args: JSX.IntrinsicAttributes) => {
   return (
     <BrowserRouter>
       <CustomLink to={"#"} {...args} />
@@ -48,7 +64,7 @@ export const CommonCustomLink: Story = (args: JSX.IntrinsicAttributes) => {
   );
 };
 
-CommonCustomLink.args = {
+DefaultCustomLink.args = {
   label: "Новости",
   to: "#",
 };

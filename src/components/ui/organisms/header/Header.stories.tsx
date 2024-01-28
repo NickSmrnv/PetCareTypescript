@@ -10,7 +10,53 @@ const meta: Meta = {
   title: "Organisms/Header",
   component: Header,
   tags: ["autodocs"],
-  argTypes: {},
+  argTypes: {
+    iconLogo: {
+      description: "Свойство iconLogo принимает иконку логотипа",
+      control: {
+        disable: true,
+      },
+    },
+
+    isBurgerMenuOpen: {
+      description:
+        "Свойство isBurgerMenuOpen отображает открыто ли бургер-меню",
+      control: {
+        type: "boolean",
+      },
+    },
+
+    toggleBurgerMenu: {
+      description:
+        "Свойство toggleBurgerMenu это функция для открытия/закрытия бургер-меню",
+      control: {
+        disable: true,
+      },
+    },
+
+    isTablet: {
+      description:
+        "Свойство isTablet предназначено для отображения контента для планшетов",
+      control: {
+        type: "boolean",
+      },
+    },
+
+    navList: {
+      description: "Свойство navList принимает список элементов навигации",
+      control: {
+        disable: true,
+      },
+    },
+
+    socialList: {
+      description:
+        "Свойство socialList принимает список элементов иконок соц. сетей",
+      control: {
+        disable: true,
+      },
+    },
+  },
 };
 
 export default meta;

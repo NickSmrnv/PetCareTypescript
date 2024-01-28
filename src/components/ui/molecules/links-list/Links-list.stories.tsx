@@ -13,20 +13,19 @@ const meta = {
   },
   tags: ["autodocs"],
   argTypes: {
+    className: {
+      description: "Свойство className добавляет класс компоненте",
+      table: {
+        defaultValue: { summary: "Любой текст" },
+      },
+      control: "text",
+    },
+
     links: {
       description: "Свойство onClick это функция, вызываемая по клику",
       table: {
         defaultValue: { summary: "Array<LinkType>" },
       },
-    },
-
-    isBurgerMenuOpen: {
-      description:
-        "Свойство isBurgerMenuOpen отображает открыто ли бургер-меню",
-      table: {
-        defaultValue: { summary: "false" },
-      },
-      control: "boolean",
     },
   },
 } satisfies Meta<typeof LinksList>;
@@ -41,7 +40,6 @@ export const PrimaryLinksList: Story = {
       { to: "/about", label: "О нас" },
       { to: "/contact", label: "Контакты" },
     ],
-    isBurgerMenuOpen: false,
   },
 
   render: () => {
