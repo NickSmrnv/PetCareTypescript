@@ -8,10 +8,9 @@ import { IconInstagram } from "../atoms/_icons/Icon-instagram.tsx";
 import { IconTelegram } from "../atoms/_icons/Icon-telegram.tsx";
 import { IconVk } from "../atoms/_icons/Icon-vk.tsx";
 import { IconLogo } from "../atoms/_icons/Icon-logo.tsx";
+import { Footer } from "../organisms/footer/Footer.tsx";
 
 export const Layout = () => {
-  // Header func -------------------------------------------------
-
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = React.useState(false);
   const [isTablet, setIsTablet] = React.useState(window.innerWidth <= 1024);
   const toggleBurgerMenu = () => {
@@ -28,6 +27,13 @@ export const Layout = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const renderIconLogo = () => {
+    const iconLogoSize = isTablet
+      ? { width: 120, height: 38 }
+      : { width: 200, height: 64 };
+    return <IconLogo {...iconLogoSize} />;
+  };
 
   const NavListMock: Array<LinkType> = [
     { to: "/news", label: "Новости", onClickLink: toggleBurgerMenu },
@@ -49,6 +55,17 @@ export const Layout = () => {
     { to: "https://vk.ru/", icon: <IconVk width={40} height={40} /> },
   ];
 
+  const ContactsListMock: Array<LinkType> = [
+    {
+      to: "tel:+88009998877",
+      label: "8 (800) 999-88-77",
+    },
+    {
+      to: "mailto: info@petcare.com",
+      icon: "info@petcare.com",
+    },
+  ];
+
   return (
     <Styles>
       <Container>
@@ -58,16 +75,18 @@ export const Layout = () => {
           isTablet={isTablet}
           navList={NavListMock}
           socialList={SocialListMock}
-          iconLogo={
-            isTablet ? (
-              <IconLogo width={120} height={38} />
-            ) : (
-              <IconLogo width={200} height={64} />
-            )
-          }
+          iconLogo={renderIconLogo()}
         />
 
-        <Outlet />
+        <main>
+          <Outlet />
+        </main>
+
+        <Footer
+          contactsList={ContactsListMock}
+          text={"©2021 PetCare. \n" + "Все права защищены "}
+          iconLogo={renderIconLogo()}
+        />
       </Container>
     </Styles>
   );

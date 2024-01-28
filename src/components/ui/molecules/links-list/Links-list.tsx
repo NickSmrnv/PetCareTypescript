@@ -12,16 +12,11 @@ export type LinkType = {
 type LinksListType = {
   links: Array<LinkType>;
   className?: string;
-  isBurgerMenuOpen?: boolean;
 };
 
-export const LinksList: React.FC<LinksListType> = ({
-  links,
-  className,
-  isBurgerMenuOpen,
-}) => {
+export const LinksList: React.FC<LinksListType> = ({ links, className }) => {
   return (
-    <s.LinksList isBurgerMenuOpen={isBurgerMenuOpen} className={className}>
+    <s.LinksList className={className}>
       {links.map((link, index) => (
         <li key={index}>
           <CustomLink

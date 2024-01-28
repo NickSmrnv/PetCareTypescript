@@ -22,20 +22,20 @@ export const Header: React.FC<HeaderType> = ({
 }) => {
   return (
     <s.HeaderWrapper>
-      <nav>
-        {isTablet && (
-          <ButtonBurger
-            onClick={toggleBurgerMenu}
-            isBurgerMenuOpen={isBurgerMenuOpen}
-          />
-        )}
+      {isTablet && (
+        <ButtonBurger
+          onClick={toggleBurgerMenu}
+          isBurgerMenuOpen={isBurgerMenuOpen}
+        />
+      )}
 
-        <s.Logo to="/" iconLink={iconLogo} />
+      <s.Logo to="/" iconLink={iconLogo} />
 
-        <s.NavList links={navList} isBurgerMenuOpen={isBurgerMenuOpen} />
+      <s.NavWrapper isBurgerMenuOpen={isBurgerMenuOpen}>
+        <s.NavList links={navList} />
+      </s.NavWrapper>
 
-        {!isTablet && <s.SocialListIcons links={socialList} />}
-      </nav>
+      {!isTablet && <s.SocialListIcons links={socialList} />}
     </s.HeaderWrapper>
   );
 };
