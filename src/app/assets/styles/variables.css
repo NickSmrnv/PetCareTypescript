@@ -20,6 +20,7 @@
     --p2: 24px/1.2 "Montserrat-Medium", sans-serif;
     --p3: 24px/1.2 "Montserrat-Regular", sans-serif;
     --p4: clamp(14px, 3vw, 22px)/1.2 "Montserrat-Regular", sans-serif;
+
     --p5: clamp(18px, 3vw, 20px)/1.2 "Montserrat-Regular", sans-serif;
     --input: clamp(14px, 3vw, 18px)/1.2 "Montserrat-Regular", sans-serif;
     --button: 22px/1.2 "Montserrat-Medium", sans-serif;
