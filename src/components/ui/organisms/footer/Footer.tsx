@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import { LinkType } from "../../molecules/links-list/Links-list.tsx";
 import * as s from "./Footer-styles.ts";
+import { Container } from "../../../../app/assets/styles/Container.ts";
 
 type FooterType = {
   contactsList: LinkType[];
@@ -14,12 +15,14 @@ export const Footer: React.FC<FooterType> = ({
   iconLogo,
 }) => {
   return (
-    <s.FooterWrapper>
-      <s.ContactsInfo links={contactsList} />
+    <Container>
+      <s.FooterWrapper>
+        <s.ContactsInfo links={contactsList} />
 
-      <s.Text>{text}</s.Text>
+        <s.Text>{text}</s.Text>
 
-      <s.Logo to="/" iconLink={iconLogo} />
-    </s.FooterWrapper>
+        <s.Logo to="/" iconLink={iconLogo} />
+      </s.FooterWrapper>
+    </Container>
   );
 };

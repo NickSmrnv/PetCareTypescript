@@ -2,9 +2,6 @@ import styled from "styled-components";
 import { breakpoints } from "./breakpoints-variables";
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
@@ -12,10 +9,6 @@ const Container = styled.div`
 
   @media (max-width: ${breakpoints.MD}) {
     padding: 0 clamp(16px, 5.36vw + -1.14px, 20px);
-  }
-
-  & main {
-    flex: 1;
   }
 `;
 

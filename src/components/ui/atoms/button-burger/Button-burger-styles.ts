@@ -17,7 +17,7 @@ const ButtonContainer = styled.div<ButtonType>`
   border: none;
   padding: 0;
   box-sizing: border-box;
-  z-index: 5;
+  z-index: 11;
   transition: ease-in-out 400ms;
 
   &:active {

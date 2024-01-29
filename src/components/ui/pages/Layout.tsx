@@ -1,6 +1,5 @@
 import { Styles } from "../../../app/assets/styles/styles.tsx";
 import { Header } from "../organisms/header/Header.tsx";
-import { Container } from "../../../app/assets/styles/Container.ts";
 import { Outlet } from "react-router-dom";
 import React from "react";
 import { LinkType } from "../molecules/links-list/Links-list.tsx";
@@ -68,26 +67,24 @@ export const Layout = () => {
 
   return (
     <Styles>
-      <Container>
-        <Header
-          isBurgerMenuOpen={isBurgerMenuOpen}
-          toggleBurgerMenu={toggleBurgerMenu}
-          isTablet={isTablet}
-          navList={NavListMock}
-          socialList={SocialListMock}
-          iconLogo={renderIconLogo()}
-        />
+      <Header
+        isBurgerMenuOpen={isBurgerMenuOpen}
+        toggleBurgerMenu={toggleBurgerMenu}
+        isTablet={isTablet}
+        navList={NavListMock}
+        socialList={SocialListMock}
+        iconLogo={renderIconLogo()}
+      />
 
-        <main>
-          <Outlet />
-        </main>
+      <main>
+        <Outlet />
+      </main>
 
-        <Footer
-          contactsList={ContactsListMock}
-          text={"©2021 PetCare. \n" + "Все права защищены "}
-          iconLogo={renderIconLogo()}
-        />
-      </Container>
+      <Footer
+        contactsList={ContactsListMock}
+        text={"©2021 PetCare. \n" + "Все права защищены "}
+        iconLogo={renderIconLogo()}
+      />
     </Styles>
   );
 };

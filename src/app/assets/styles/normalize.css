@@ -18,6 +18,16 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--white);
     color: var(--gray);
+
+    & #root {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    & main {
+        flex: 1;
+    }
 }
 
 body,

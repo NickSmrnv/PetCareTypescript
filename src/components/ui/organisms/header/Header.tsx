@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import * as s from "./Header-styles";
 import { LinkType } from "../../molecules/links-list/Links-list.tsx";
 import { ButtonBurger } from "../../atoms/button-burger/Button-burger.tsx";
+import { Container } from "../../../../app/assets/styles/Container.ts";
 
 type HeaderType = {
   className?: string;
@@ -23,23 +24,25 @@ export const Header: React.FC<HeaderType> = ({
   socialList,
 }) => {
   return (
-    <s.HeaderWrapper>
-      {isTablet && (
-        <ButtonBurger
-          onClick={toggleBurgerMenu}
-          isBurgerMenuOpen={isBurgerMenuOpen}
-        />
-      )}
+    <Container>
+      <s.HeaderWrapper>
+        {isTablet && (
+          <ButtonBurger
+            onClick={toggleBurgerMenu}
+            isBurgerMenuOpen={isBurgerMenuOpen}
+          />
+        )}
 
-      <s.Logo to="/" iconLink={iconLogo} />
+        <s.Logo to="/" iconLink={iconLogo} />
 
-      <s.NavWrapper isBurgerMenuOpen={isBurgerMenuOpen}>
-        <s.NavList className={className} links={navList} />
-      </s.NavWrapper>
+        <s.NavWrapper isBurgerMenuOpen={isBurgerMenuOpen}>
+          <s.NavList className={className} links={navList} />
+        </s.NavWrapper>
 
-      {!isTablet && (
-        <s.SocialListIcons className={className} links={socialList} />
-      )}
-    </s.HeaderWrapper>
+        {!isTablet && (
+          <s.SocialListIcons className={className} links={socialList} />
+        )}
+      </s.HeaderWrapper>
+    </Container>
   );
 };

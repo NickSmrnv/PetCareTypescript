@@ -7,14 +7,12 @@ const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 7vw;
-  margin-top: 48px;
-  margin-bottom: 30px;
+  gap: clamp(2vw, 70px, 5vw);
+  padding-top: 48px;
+  padding-bottom: 30px;
 
   @media (max-width: ${breakpoints.LG}) {
-    margin-top: 32px;
-  }
-  & nav {
+    padding-top: 32px;
   }
 `;
 
@@ -30,11 +28,11 @@ const NavWrapper = styled.nav<{ isBurgerMenuOpen: boolean }>`
   @media (max-width: ${breakpoints.LG}) {
     position: fixed;
     width: 100%;
-
     top: ${({ isBurgerMenuOpen }) => (isBurgerMenuOpen ? "0" : "-100%")};
     left: 0;
     background-color: var(--main);
     transition: ease-in-out 0.2s;
+    z-index: 10;
   }
 `;
 
