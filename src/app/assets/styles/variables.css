@@ -28,7 +28,7 @@
 
 @media (max-width: 1024px) {
     :root {
-        --h3: 14px/1.2 "Montserrat-Regular", sans-serif;
+        --h3: clamp(14px, 3vw, 20px)/1.2 "Montserrat-Regular", sans-serif;
         --button: 14px/1.2 "Montserrat-Medium", sans-serif;
     }
 }

@@ -15,8 +15,13 @@ export const Home = () => {
       text:
         "Записывайтесь в ветклиники\n" +
         "и консультируйтесь с ветеринарным врачом онлайн",
-      imageSrc: "../src/app/assets/images/Slide-1-desktop.jpg",
-      imageAlt: "Серый полосатый кот сидит.",
+      images: {
+        desktop: "../src/app/assets/images/Slide-1-desktop.jpg",
+        desktop2x: "../src/app/assets/images/Slide-1-desktop@2x.jpg",
+        mobile: "../src/app/assets/images/Slide-1-mobile.jpg",
+        mobile2x: "../src/app/assets/images/Slide-1-mobile@2x.jpg",
+      },
+      AltText: "Серый полосатый кот сидит.",
       isGradientBtnBg: true,
       textButton: "Связаться с нами",
       onClickButton: scrollToFooter,
@@ -26,8 +31,13 @@ export const Home = () => {
       title: "Закажите план заботы",
       text: "Регулярная доставка специально подобранного корма и других товаров для кошек и собак",
       price: "1299",
-      imageSrc: "../src/app/assets/images/Slide-2-desktop.jpg",
-      imageAlt: "Голова коричневой собаки с красным ошейником.",
+      images: {
+        desktop: "../src/app/assets/images/Slide-2-desktop.jpg",
+        desktop2x: "../src/app/assets/images/Slide-2-desktop@2x.jpg",
+        mobile: "../src/app/assets/images/Slide-2-mobile.jpg",
+        mobile2x: "../src/app/assets/images/Slide-2-mobile@2x.jpg",
+      },
+      AltText: "Голова коричневой собаки с красным ошейником.",
       isGradientBtnBg: false,
       textButton: "Подобрать план",
     },
@@ -35,7 +45,7 @@ export const Home = () => {
 
   return (
     <div>
-      <Slider items={SlidesList} />;
+      <Slider items={SlidesList} />
     </div>
   );
 };

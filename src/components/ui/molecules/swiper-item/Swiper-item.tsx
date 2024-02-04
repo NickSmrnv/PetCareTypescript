@@ -1,13 +1,19 @@
 import * as s from "./Swiper-item-styles.ts";
 import { FC } from "react";
+import { breakpoints } from "../../../../app/assets/styles/breakpoints-variables.ts";
 
 export type SwiperItemType = {
   className?: string;
   title: string;
   text: string;
   price?: string;
-  imageSrc: string;
-  imageAlt: string;
+  images: {
+    desktop: string;
+    desktop2x: string;
+    mobile: string;
+    mobile2x: string;
+  };
+  AltText: string;
   isGradientBtnBg: boolean;
   textButton: string;
   onClickButton?: () => void;
@@ -18,8 +24,8 @@ export const SwiperItem: FC<SwiperItemType> = ({
   title,
   text,
   price,
-  imageSrc,
-  imageAlt,
+  images,
+  AltText,
   isGradientBtnBg,
   textButton,
   onClickButton,
@@ -42,7 +48,20 @@ export const SwiperItem: FC<SwiperItemType> = ({
         />
       </s.SwiperContent>
 
-      <s.ImageSlider src={imageSrc} alt={imageAlt} draggable={false} />
+      <picture>
+        <source
+          srcSet={`${images.mobile} 1x, ${images.mobile2x} 2x`}
+          media={`(max-width: ${breakpoints.LG}px)`}
+          type="image/jpeg"
+        />
+
+        <s.ImageSlider
+          src={images.desktop}
+          srcSet={`${images.desktop} 1x, ${images.desktop2x} 2x`}
+          alt={AltText}
+          draggable={false}
+        />
+      </picture>
     </s.SwiperItem>
   );
 };

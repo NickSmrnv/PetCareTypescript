@@ -1,29 +1,41 @@
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import * as s from "./Slider-styles.ts";
 import {
   SwiperItem,
   SwiperItemType,
 } from "../../molecules/swiper-item/Swiper-item.tsx";
 import { FC } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { IconArrow } from "../../atoms/_icons/Icon-arrow.tsx";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export type SliderType = {
   items: Array<SwiperItemType>;
 };
+
 export const Slider: FC<SliderType> = ({ items }) => {
+  const swiper = useSwiper();
+
   return (
     <s.SwiperContainer>
       <Swiper
-        modules={[Navigation, A11y]}
-        spaceBetween={30}
+        modules={[Navigation, Pagination]}
+        spaceBetween={0}
         slidesPerView={1}
-        navigation
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        navigation={{
+          prevEl: ".custom-prev-button",
+          nextEl: ".custom-next-button",
+        }}
+        pagination={{
+          clickable: true,
+        }}
       >
         {items.map((item, index) => (
           <SwiperSlide>
@@ -31,6 +43,17 @@ export const Slider: FC<SliderType> = ({ items }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      <s.CustomNextButton
+        className={"custom-next-button"}
+        icon={<IconArrow width={32} height={32} />}
+        onClick={() => swiper.slideNext()}
+      />
+      <s.CustomPrevButton
+        className={"custom-prev-button"}
+        icon={<IconArrow width={32} height={32} />}
+        onClick={() => swiper.slidePrev()}
+      />
     </s.SwiperContainer>
   );
 };

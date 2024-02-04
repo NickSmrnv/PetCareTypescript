@@ -7,7 +7,7 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 0 clamp(80px, 15.63vw + -120px, 112px);
 
-  @media (max-width: ${breakpoints.MD}) {
+  @media (max-width: ${breakpoints.LG}) {
     padding: 0 clamp(16px, 5.36vw + -1.14px, 20px);
   }
 `;
