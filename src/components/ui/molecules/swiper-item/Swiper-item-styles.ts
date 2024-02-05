@@ -15,7 +15,7 @@ const SwiperItem = styled(SwiperSlide)`
   margin: 0 auto;
 
   @media (max-width: ${breakpoints.LG}) {
-    padding: 32px 24px 20px;
+    padding: 32px 20px 20px;
     height: 400px;
   }
 
@@ -82,6 +82,10 @@ const Text = styled.p<ButtonType>`
   @media (max-width: ${breakpoints.LG}) {
     width: 65%;
   }
+
+  @media (max-width: ${breakpoints.MD}) {
+    width: 100%;
+  }
 `;
 
 const Price = styled.div`
@@ -110,7 +114,7 @@ const ButtonSlider = styled(Button)`
   @media (max-width: ${breakpoints.LG}) {
     width: 160px;
     height: 40px;
-    margin-top: ${({ isGradientBtnBg }) => (isGradientBtnBg ? "5px" : "auto")};
+    margin-top: ${({ isGradientBtnBg }) => (isGradientBtnBg ? "0a" : "auto")};
   }
 `;
 
@@ -122,6 +126,17 @@ const ImageSlider = styled.img`
   user-select: none;
   top: 0;
   right: 0;
+
+  @media (max-width: ${breakpoints.LG}) {
+    border-radius: 24px;
+  }
+
+  @media (max-width: ${breakpoints.SM}) {
+    height: auto;
+    bottom: 0;
+    top: auto;
+    object-fit: initial;
+  }
 `;
 
 export {

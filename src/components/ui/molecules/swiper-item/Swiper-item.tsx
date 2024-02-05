@@ -51,7 +51,7 @@ export const SwiperItem: FC<SwiperItemType> = ({
       <picture>
         <source
           srcSet={`${images.mobile} 1x, ${images.mobile2x} 2x`}
-          media={`(max-width: ${breakpoints.LG}px)`}
+          media={`(max-width: ${breakpoints.SM})`}
           type="image/jpeg"
         />
 

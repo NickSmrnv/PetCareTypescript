@@ -4,7 +4,7 @@ import { SwiperButtonNav } from "../../molecules/swiper-button-nav/Swiper-button
 
 const SwiperContainer = styled.section`
   position: relative;
-  background-color: var(--main);
+  margin-bottom: 70px;
 
   & .swiper-pagination {
     display: none;
@@ -12,7 +12,7 @@ const SwiperContainer = styled.section`
 
   @media (max-width: ${breakpoints.LG}) {
     padding: 0 clamp(16px, 5.36vw + -1.14px, 20px);
-    background-color: transparent;
+    margin-bottom: 48px;
 
     & .swiper {
       border-radius: 24px;

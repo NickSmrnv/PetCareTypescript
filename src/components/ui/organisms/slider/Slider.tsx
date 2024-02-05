@@ -27,7 +27,7 @@ export const Slider: FC<SliderType> = ({ items }) => {
     <s.SwiperContainer>
       <Swiper
         modules={[Navigation, Pagination]}
-        spaceBetween={0}
+        spaceBetween={50}
         slidesPerView={1}
         navigation={{
           prevEl: ".custom-prev-button",
